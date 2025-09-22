@@ -38,4 +38,41 @@ Receives information from API server
 4) Controller Manager 
 Example: Replica Set
 5) CCM (Cloud Controller Manager)
-    - No need for on-premice
+    - No need for on-premise
+  
+
+
+## ** K8s Deployment - Replica set **
+
+The main work of controller is watching the POD is running in desired state or not. 
+
+-> If not it sends the message to scheduler to create a new resource to achieve the desired state. 
+
+-> One of the controller is called "Deployment".
+
+->  "Deployment" first creates "replica set(actual controller)" managed by "deployment" and replica set creates and manages the POD. 
+
+
+        +-----------------------------+
+        |      Deployment       |
+        | (desired state: 3)   |
+        +-----------------------------+
+                     |
+                     | creates or updates
+                     |
+        +----------------------------+
+        |      ReplicaSet        |
+        | (desired state: 3)  | 
+        +----------------------------+
+                     |
+                     | creates or updates
+                     |
+        +----------------------+
+        |         Pod          |  (POD -> execution environment for the containers) 
+        +----------------------+
+                     |
+                     | runs the containers
+                     |
+        +----------------------+
+        |       Container  |
+        +----------------------+
