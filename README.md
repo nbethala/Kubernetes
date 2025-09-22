@@ -5,6 +5,9 @@ Pod - A Kubernetes pod is a collection of one or more containers, and is the sma
 
 # **k8s architecture**
 
+<img width="1241" height="701" alt="kubernetes-architecture" src="https://github.com/user-attachments/assets/4ec8651b-6c99-4405-8861-ef61d00a14bf" />
+
+
 # Control plane (master node)
   api server - core component of k8s, accepts all incoming  reqs, exposes k8s to external world. 
   
